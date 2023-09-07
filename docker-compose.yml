@@ -1,0 +1,25 @@
+version: '3.5'
+
+services:
+
+  node:
+    build:
+      context: node
+    container_name: "node-service"
+    restart: unless-stopped
+    working_dir: /usr/src/app
+    environment:
+      NODE_ENV: production
+      TZ: America/Montevideo
+    volumes:
+      - ./node:/usr/src/app
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    ports:
+      - 5000:5000
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
