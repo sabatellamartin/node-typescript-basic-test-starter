@@ -1,12 +1,16 @@
-import express, { Request, Response } from 'express';
-const app = express();
-
+import Server from "./server";
+import { Request, Response } from 'express';
 import { hey } from './helper';
 
-app.get("/hello", (req: Request, res: Response): void => {
+//import dotenv from 'dotenv';
+//dotenv.config();
+
+const server = Server.init(5000);
+
+server.app.get("/hello", (req: Request, res: Response): void => {
     res.json({ message: hey });
 });
 
-app.listen(5000, (): void => {
-    console.log("Server Running");
+server.start(() => {
+    console.log("Server Running at 5000 port");
 });
