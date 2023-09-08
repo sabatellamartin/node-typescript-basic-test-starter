@@ -46,56 +46,29 @@ docker exec -it node-service npm install
 
 ## How was building
 
-Check ts version
+To create this project. 
+
+1. verfy typescript version. 
+2. init typescript config file.
+3. init project depencies.
+4. install all dependencies we need.
 
 ```bash
 docker exec -it node-service tsc --version
-```
-
-Init tsconfig.json
-
-```bash
 docker exec -it node-service tsc --init
-```
-
-Init npm
-
-```bash
 docker exec -it node-service npm init
-```
-
-Install typescript
-
-```bash
 docker exec -it node-service npm install typescript --save
-```
-
-Install express
-
-```bash
 docker exec -it node-service npm install express --save
-```
-
-Install nodemon
-
-```bash
 docker exec -it node-service npm install nodemon --save
-```
-
-Install ts-node
-
-```bash
 docker exec -it node-service npm install ts-node --save
-```
-
-Install types for node
-
-```bash
+docker exec -it node-service npm install dotenv --save
 docker exec -it node-service npm install @types/node --save
+docker exec -it node-service npm install @types/express --save
+docker exec -it node-service npm install @types/dotenv --save
 ```
 
-Install types for express
+Build app to deploy
 
 ```bash
-docker exec -it node-service npm install @types/express --save
+docker exec -it node-service npm run build
 ```

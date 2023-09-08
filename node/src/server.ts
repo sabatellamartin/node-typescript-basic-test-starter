@@ -1,4 +1,5 @@
-import express = require('express');
+import express from 'express';
+import path from 'path';
 
 export default class Server {
 
@@ -16,6 +17,11 @@ export default class Server {
 
     start(callback:any) {
         this.app.listen(this.port,callback);
+    }
+    
+    views(dir:string) {
+        this.app.use(express.static(path.join(__dirname, dir)));
+        this.app.set("view engine", "html");
     }
     
 }
