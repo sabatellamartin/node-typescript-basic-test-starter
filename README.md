@@ -111,8 +111,63 @@ Create tsconfig.json and add the next code
 }
 ```
 
-install ts node
+
+
+
+
+
+
+
+Check ts version
 
 ```bash
-docker exec -it node-service npm install --save-dev ts-node
+docker exec -it node-service tsc --version
+```
+
+Init tsconfig.json
+
+```bash
+docker exec -it node-service tsc --init
+```
+
+Init npm
+
+```bash
+docker exec -it node-service npm init
+```
+
+Install typescript
+
+```bash
+docker exec -it node-service npm install typescript --save
+```
+
+Install express
+
+```bash
+docker exec -it node-service npm install express --save
+```
+
+Install nodemon
+
+```bash
+docker exec -it node-service npm install nodemon --save
+```
+
+Install ts-node
+
+```bash
+docker exec -it node-service npm install ts-node --save
+```
+
+Install types for node
+
+```bash
+docker exec -it node-service npm install @types/node --save
+```
+
+Install types for express
+
+```bash
+docker exec -it node-service npm install @types/express --save
 ```

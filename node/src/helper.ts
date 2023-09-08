@@ -1,1 +1,1 @@
-export const hey = 'hi you!';
+export const hey = 'Welcome to node typescript starter proyect.';
